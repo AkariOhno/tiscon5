@@ -138,6 +138,20 @@ public class EstimateController {
         return "result";
     }
 
+    @GetMapping(value = "detail")
+    String detail(UserOrderForm userOrderForm, Model model) {
+        model.addAttribute("prefectures", estimateDAO.getAllPrefectures());
+        model.addAttribute("userOrderForm", userOrderForm);
+        return "detail";
+    }
+
+    @PostMapping(value = "order", params = "backToDetail")
+    String backToDetail(UserOrderForm userOrderForm, Model model) {
+        model.addAttribute("prefectures", estimateDAO.getAllPrefectures());
+        model.addAttribute("userDetailForm", userOrderForm);
+        return "detail";
+    }
+
     /**
      * 申し込み完了画面に遷移する。
      *
