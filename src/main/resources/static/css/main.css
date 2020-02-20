@@ -204,3 +204,15 @@ td {
     padding: 1em;
 
 }
+
+.money-message{
+    text-align: center;
+    font-size: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.money{
+    color: red;
+}
+

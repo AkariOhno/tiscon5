@@ -2,7 +2,7 @@
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <title>お見積り情報入力</title>
+  <title>かんたん見積り情報入力</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" th:href="@{http://fonts.googleapis.com/css?family=Exo:900}"
@@ -14,39 +14,38 @@
 <nav th:insert="header.html :: header"></nav>
 <div class="container">
   <form th:action="@{/result}" th:object="${userEasyForm}" class="form-horizontal" method="post">
-    <h1>かんたんお見積り情報入力</h1>
+    <h1>かんたん見積り情報入力</h1>
     <ul class="error-message" th:if="${#fields.hasErrors('all')}">
       <li th:each="err : ${#fields.errors('all')}" th:text="${err}"></li>
     </ul>
     <div class="col-sm-12">
       <fieldset>
-        <legend>荷物情報</legend>
         <div class="form-group">
-          <label for="oldPrefectureId">転居元住所（都道府県）</label>
+          <label for="oldPrefectureId">現住所（都道府県）</label>
           <select id="oldPrefectureId" name="oldPrefectureId" class="form-control">
             <option th:each="prefecture : ${prefectures}" th:value="${prefecture.prefectureId}" th:field="*{oldPrefectureId}">[[${prefecture.prefectureName}]]</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="newPrefectureId">転居先住所（都道府県）</label>
+          <label for="newPrefectureId">引越し先住所（都道府県）</label>
           <select id="newPrefectureId" name="newPrefectureId" class="form-control">
             <option th:each="prefecture : ${prefectures}" th:value="${prefecture.prefectureId}" th:field="*{newPrefectureId}">[[${prefecture.prefectureName}]]</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="box">段ボールの個数</label>
+          <label for="box">段ボール（個）</label>
           <input type="text" id="box" name="box" th:field="*{box}" class="form-control" value="10"/>
         </div>
         <div class="form-group">
-          <label for="bed">ベッドの個数</label>
+          <label for="bed">ベッド（台）</label>
           <input type="text" id="bed" name="bed" th:field="*{bed}" class="form-control" value="3"/>
         </div>
         <div class="form-group">
-          <label for="bicycle">自転車の個数</label>
+          <label for="bicycle">自転車（台）</label>
           <input type="text" id="bicycle" name="bicycle" th:field="*{bicycle}" class="form-control" value="1"/>
         </div>
         <div class="form-group">
-          <label for="washingMachine">洗濯機の個数</label>
+          <label for="washingMachine">洗濯機（台）</label>
           <input type="text" id="washingMachine" name="washingMachine" th:field="*{washingMachine}" class="form-control"
                  value="1"/>
         </div>

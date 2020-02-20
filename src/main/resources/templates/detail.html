@@ -20,7 +20,6 @@
         </ul>
         <div class="col-sm-12">
             <fieldset>
-                <legend>個人情報</legend>
                 <div class="form-group">
                     <label for="customerName">氏名</label>
                     <input type="text" id="customerName" name="customerName" th:field="*{customerName}" class="form-control" value="山田太郎"/>
@@ -34,24 +33,24 @@
                     <input type="text" id="email" name="email" th:field="*{email}" class="form-control" value="test@test.com"/>
                 </div>
                 <div class="form-group">
-                    <label for="oldPrefectureId">転居元住所（都道府県）</label>
+                    <label for="oldPrefectureId">現住所（都道府県）</label>
                     <select id="oldPrefectureId" name="oldPrefectureId" class="form-control">
                         <option th:each="prefecture : ${prefectures}" th:value="${prefecture.prefectureId}" th:field="*{oldPrefectureId}">[[${prefecture.prefectureName}]]</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="oldAddress">転居元住所（市区町村以下）</label>
+                    <label for="oldAddress">現住所（市区町村以下）</label>
                     <input type="text" id="oldAddress" name="oldAddress" th:field="*{oldAddress}"
                            class="form-control" value="新宿区西新宿1-1-1"/>
                 </div>
                 <div class="form-group">
-                    <label for="newPrefectureId">転居先住所（都道府県）</label>
+                    <label for="newPrefectureId">引越し先住所（都道府県）</label>
                     <select id="newPrefectureId" name="newPrefectureId" class="form-control">
                         <option th:each="prefecture : ${prefectures}" th:value="${prefecture.prefectureId}" th:field="*{newPrefectureId}">[[${prefecture.prefectureName}]]</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="newAddress">転居先住所（市区町村以下）</label>
+                    <label for="newAddress">引越し先住所（市区町村以下）</label>
                     <input type="text" id="newAddress" name="newAddress" th:field="*{newAddress}" class="form-control"
                            value="札幌市南区1"/>
                 </div>
@@ -63,8 +62,8 @@
             </fieldset>
             <div class="form-group">
                 <div class="text-center">
-                    <button type="submit" name="backToResult" class="btn btn-primary">見積もり結果へ戻る</button>
-                    <button type="submit" name="confirm" class="btn btn-primary">確認</button>
+                    <button type="submit" name="backToResult" class="btn btn-primary">かんたん見積もり結果へ戻る</button>
+                    <button type="submit" name="confirm" class="btn btn-primary">確認画面へ</button>
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <title>概算見積もり確認</title>
+  <title>かんたん見積もり結果</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" th:href="@{http://fonts.googleapis.com/css?family=Exo:900}"
@@ -14,9 +14,9 @@
 <body>
 <div class="ui main container">
   <form th:action="@{/detail}" th:object="${userEasyForm}" class="form-horizontal" method="post">
-    <h1>概算お見積り結果</h1>
+    <h1>かんたん見積り結果</h1>
     <div class="col-sm-12">
-      <h2>概算お見積り結果は<span th:text="${price}"></span>円です。</h2>
+      <div class="money-message">かんたん見積り結果は<span class="money" th:text="${price}"></span>円です。</div>
       <input type="hidden" name="oldPrefectureId" id="oldPrefectureId" th:value="*{oldPrefectureId}"/>
       <input type="hidden" name="newPrefectureId" id="newPrefectureId" th:value="*{newPrefectureId}"/>
       <input type="hidden" name="box" id="box" th:value="*{box}"/>
