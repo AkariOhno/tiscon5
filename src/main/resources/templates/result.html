@@ -10,9 +10,9 @@
   <link rel="stylesheet" th:href="@{/css/main.css}" href="../static/css/main.css">
 </head>
 
-<body>
 <nav th:insert="header.html :: header"></nav>
-<div class="container">
+<body>
+<div class="ui main container">
   <form th:action="@{/detail}" th:object="${userEasyForm}" class="form-horizontal" method="post">
     <h1>概算お見積り結果</h1>
     <div class="col-sm-12">

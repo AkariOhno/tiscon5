@@ -1,10 +1,10 @@
 body {
-    background: #edf9f9;
-    background-size: cover;
-    background-attachment: fixed;
-    padding: 0;
-    margin: 0;
-}
+         background-repeat: no-repeat;
+         background-position: calc(60%) calc(70%);
+         background-image: url("../img/top.jpg");
+         background-size: cover;
+
+  }
 
 .jumbotron {
     background-repeat: no-repeat;
@@ -26,7 +26,7 @@ body {
 }
 
 .ui.main.container {
-    padding-top: 80px;
+    padding-bottom: 500px;
 }
 
 a.logo {
@@ -195,4 +195,12 @@ ul.label {
 
 td {
     width: 400px;
+}
+
+.aa{
+    margin: 30px;
+    width: 800px;
+    text-align: center;
+    padding: 1em;
+
 }
