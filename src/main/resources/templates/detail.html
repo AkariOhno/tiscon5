@@ -15,7 +15,7 @@
 <div class="container">
     <form th:action="@{/submit}" th:object="${userOrderForm}" class="form-horizontal" method="post">
         <h1>詳細情報入力</h1>
-        <ul th:if="${#fields.hasErrors('all')}">
+        <ul class="error-message" th:if="${#fields.hasErrors('all')}">
             <li th:each="err : ${#fields.errors('all')}" th:text="${err}"></li>
         </ul>
         <div class="col-sm-12">
